@@ -7,7 +7,7 @@
 #include "Components/PrimitiveComponent.h"
 #include "GameFramework/Actor.h"
 
-#define OUT
+//#define OUT
 
 // Sets default values for this component's properties
 UGrabber::UGrabber()
