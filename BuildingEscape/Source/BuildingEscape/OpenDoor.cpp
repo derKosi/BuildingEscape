@@ -30,18 +30,16 @@ void UOpenDoor::BeginPlay()
 
 void UOpenDoor::OpenDoor()
 {
-	//Owner->SetActorRotation(FRotator(0.f, OpenAngle, 0.f));
-	float yRotation = Owner->GetActorRotation().Yaw;
-	Owner->SetActorRotation(FRotator(0.f, yRotation + OpenAngle, 0.f));
+	float yawCurrent = Owner->GetActorRotation().Yaw;
+	Owner->SetActorRotation(FRotator(0.f, yawCurrent + OpenAngle, 0.f));
 	bIsDoorOpen = true;
 }
 
 
 void UOpenDoor::CloseDoor()
 {
-	//Owner->SetActorRotation(FRotator(0.f, 180.f, 0.f));
-	float yRotation = Owner->GetActorRotation().Yaw;
-	Owner->SetActorRotation(FRotator(0.f, yRotation - OpenAngle, 0.f));
+	float yawCurrent = Owner->GetActorRotation().Yaw;
+	Owner->SetActorRotation(FRotator(0.f, yawCurrent - OpenAngle, 0.f));
 	bIsDoorOpen = false;
 } 
 
@@ -63,7 +61,7 @@ void UOpenDoor::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompon
 	}
 
 	// Check if it's time to close the door
-	if ((GetWorld()->GetTimeSeconds() - LastDoorOpenTime) > DoorCloseDelay)
+	if (LastDoorOpenTime != 0 && (GetWorld()->GetTimeSeconds() - LastDoorOpenTime) > DoorCloseDelay)
 	{
 		if (bIsDoorOpen)
 		{
