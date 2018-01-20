@@ -413,6 +413,7 @@
 		<None Include="..\..\Config\DefaultEditor.ini" />
 		<None Include="..\..\Config\DefaultEngine.ini" />
 		<None Include="..\..\Config\DefaultGame.ini" />
+		<None Include="..\..\Config\DefaultInput.ini" />
 		<None Include="..\..\Source\BuildingEscape\BuildingEscape.Build.cs" />
 		<ClCompile Include="..\..\Source\BuildingEscape\BuildingEscape.cpp" />
 		<ClInclude Include="..\..\Source\BuildingEscape\BuildingEscape.h" />
