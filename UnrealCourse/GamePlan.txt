@@ -1,0 +1,5 @@
+inpot text , words of guesses
+output text cows and bulls, hits and misses, score
+tasks guess a hidden word
+performance not mcuh, need a console of sorts, keyboard as imput makes life easier
+assets ascii art, maybe a winning sound, colors
